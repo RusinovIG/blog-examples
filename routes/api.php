@@ -16,3 +16,8 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::middleware(\App\Http\Middleware\TrimStrings::class)->group(function () {
+    Route::post('test-middleware', function (Request $request) {})
+        ->name('test-middleware');
+});
