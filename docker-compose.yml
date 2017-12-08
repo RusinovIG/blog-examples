@@ -1,0 +1,12 @@
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+     - "8181:8181"
+    volumes :
+     - ".:/test_project"
+  postgres:
+    image: "postgres:alpine"
+  redis:
+    image: "redis:alpine"
