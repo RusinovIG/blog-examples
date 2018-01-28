@@ -17,5 +17,6 @@ Route::get('/', function () {
 
 Route::get('/test', function () {
     echo 'Connected to database: ' . DB::connection()->getDatabaseName() . '<br>';
+    echo \App\User::all()->count();
     echo 'Visitors count: ' . Redis::incr('visitorsCount');
 });
