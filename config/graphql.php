@@ -149,7 +149,8 @@ return [
      * ]
      */
     'types' => [
-        'User' => 'App\GraphQL\Type\UserType'
+        'User' => 'App\GraphQL\Type\UserType',
+        'Post' => 'App\GraphQL\Type\PostType',
     ],
 
     /*

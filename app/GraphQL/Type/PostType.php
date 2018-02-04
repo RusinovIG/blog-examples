@@ -2,6 +2,7 @@
 
 namespace App\GraphQL\Type;
 
+use App\GraphQL\Field\DateTimeField;
 use Folklore\GraphQL\Support\Type as BaseType;
 use GraphQL\Type\Definition\Type;
 
@@ -9,7 +10,7 @@ class PostType extends BaseType
 {
     protected $attributes = [
         'name' => 'PostType',
-        'description' => 'A type'
+        'description' => 'A blog posts type'
     ];
 
     public function fields()
@@ -21,15 +22,11 @@ class PostType extends BaseType
             'title' => [
                 'type' => Type::nonNull(Type::string()),
             ],
-            'category_id' => [
+            'user_id' => [
                 'type' => Type::nonNull(Type::int()),
             ],
-            'created_at' => [
-                'type' => Type::string(),
-            ],
-            'updated_at' => [
-                'type' => Type::string(),
-            ]
+            'created_at' => DateTimeField::class,
+            'updated_at' => DateTimeField::class,
         ];
     }
 }
